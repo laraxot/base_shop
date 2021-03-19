@@ -1,0 +1,13 @@
+{
+    "name": "Dropship",
+    "alias": "dropship",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Dropship\\Providers\\DropshipServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
