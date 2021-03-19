@@ -22,3 +22,9 @@
 [submodule "laravel/resources/views/themes/sb-admin-2-bs4"]
 	path = laravel/resources/views/themes/sb-admin-2-bs4
 	url = https://github.com/laraxot/theme_sb-admin-2-bs4
+[submodule "Geo"]
+	path = Geo
+	url = https://github.com/laraxot/module_geo.git
+[submodule "laravel/Modules/Geo"]
+	path = laravel/Modules/Geo
+	url = https://github.com/laraxot/module_geo.git
