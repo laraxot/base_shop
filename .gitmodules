@@ -1,0 +1,24 @@
+[submodule "bashscripts"]
+	path = bashscripts
+	url = https://github.com/laraxot/bashscripts
+[submodule "laravel/Modules/module_blog"]
+	path = laravel/Modules/module_blog
+	url = https://github.com/laraxot/module_blog
+[submodule "laravel/Modules/Blog"]
+	path = laravel/Modules/Blog
+	url = https://github.com/laraxot/module_blog
+[submodule "laravel/Modules/FormX"]
+	path = laravel/Modules/FormX
+	url = https://github.com/laraxot/module_formx
+[submodule "laravel/Modules/LU"]
+	path = laravel/Modules/LU
+	url = https://github.com/laraxot/module_lu
+[submodule "laravel/Modules/Theme"]
+	path = laravel/Modules/Theme
+	url = https://github.com/laraxot/module_theme
+[submodule "laravel/Modules/Xot"]
+	path = laravel/Modules/Xot
+	url = https://github.com/laraxot/module_xot
+[submodule "laravel/resources/views/themes/sb-admin-2-bs4"]
+	path = laravel/resources/views/themes/sb-admin-2-bs4
+	url = https://github.com/laraxot/theme_sb-admin-2-bs4
