@@ -1,7 +1,9 @@
-<?php return array (
+<?php
+
+ return array (
   'adm_theme' => 'sb-admin-2-bs4',
   'enable_ads' => '1',
-  'model' => 
+  'model' =>
   array (
     'amenity' => 'Modules\Blog\Models\Amenity',
     'article' => 'Modules\Blog\Models\Article',
@@ -40,5 +42,5 @@
     'widget' => 'Modules\Xot\Models\Widget',
   ),
   'primary_lang' => 'it',
-  'pub_theme' => 'directorybs4',
+  'pub_theme' => 'sb-admin-2-bs4',
 );
