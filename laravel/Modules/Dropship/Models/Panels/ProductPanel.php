@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Dropship\Models\Panels;
 
 use Illuminate\Http\Request;
@@ -7,18 +9,13 @@ use Illuminate\Http\Request;
 use Modules\Xot\Models\Panels\XotBasePanel;
 
 class ProductPanel extends XotBasePanel {
-
     /**
      * The model the resource corresponds to.
-     *
-     * @var string
      */
     public static string $model = 'Modules\Dropship\Models\Product';
 
     /**
      * The single value that should be used to represent the resource when being displayed.
-     *
-     * @var string
      */
     public static string $title = 'title';
 
@@ -27,8 +24,8 @@ class ProductPanel extends XotBasePanel {
      *
      * @var array
      */
-    public static $search = array(
-    );
+    public static $search = [
+    ];
 
     /**
      * The relationships that should be eager loaded on index queries.
@@ -40,7 +37,6 @@ class ProductPanel extends XotBasePanel {
     }
 
     public function search(): array {
-
         return [];
     }
 
@@ -80,58 +76,59 @@ class ProductPanel extends XotBasePanel {
 
     /**
      * Get the fields displayed by the resource.
-     *
-     * @return array
-      'col_bs_size' => 6,
-      'sortable' => 1,
-      'rules' => 'required',
-      'rules_messages' => ['it'=>['required'=>'Nome Obbligatorio']],
       'value'=>'..',
      */
     public function fields(): array {
-        return array(
-            0 =>
-            (object) array(
+        return [
+            (object) [
+                'type' => 'Id',
+                'name' => 'id',
+                'col_bs_size' => 6,
+            ],
+            (object) [
                 'type' => 'Text',
-                'name' => 'url'
-            ),
-            1 =>
-            (object) array(
+                'name' => 'url',
+                'col_bs_size' => 6,
+            ],
+            (object) [
                 'type' => 'Text',
                 'name' => 'title',
-                'placeholder' => ''
-            ),
-            2 =>
-            (object) array(
+
+                'placeholder' => '',
+                'col_bs_size' => 6,
+            ],
+            (object) [
                 'type' => 'Text',
-                'name' => 'description'
-            ),
-            3 =>
-            (object) array(
+                'name' => 'description',
+                'col_bs_size' => 6,
+            ],
+            (object) [
                 'type' => 'Text',
-                'name' => 'img_url'
-            ),
-            4 =>
-            (object) array(
+                'name' => 'img_url',
+                'col_bs_size' => 6,
+            ],
+            (object) [
                 'type' => 'Number',
-                'name' => 'purchase_price'
-            ),
-            5 =>
-            (object) array(
+                'name' => 'purchase_price',
+                'col_bs_size' => 6,
+            ],
+            (object) [
                 'type' => 'Number',
-                'name' => 'purchase_vat_percentable'
-            ),
-            6 =>
-            (object) array(
+                'name' => 'purchase_vat_percentable',
+                'col_bs_size' => 6,
+            ],
+            (object) [
                 'type' => 'Number',
-                'name' => 'purchase_taxable_price'
-            ),
-            7 =>
-            (object) array(
+                'name' => 'purchase_taxable_price',
+                'col_bs_size' => 6,
+            ],
+
+            (object) [
                 'type' => 'Number',
-                'name' => 'purchase_vat_price'
-            ),
-                /*
+                'name' => 'purchase_vat_price',
+                'col_bs_size' => 6,
+            ],
+            /*
                   $table->string('url')->default('');
                   $table->string('titolo')->default('');
                   $table->string('descrizione')->default('');
@@ -162,7 +159,7 @@ class ProductPanel extends XotBasePanel {
                   $table->integer('shareholders_number')->default(2);
 
                   $table->decimal('dividend', $precision = 16, $scale = 8)->default(0); */
-        );
+        ];
     }
 
     /**
@@ -213,5 +210,4 @@ class ProductPanel extends XotBasePanel {
     public function actions() {
         return [];
     }
-
 }
