@@ -53,3 +53,4 @@ Thumbs.db
 *.phar
 /public_html/photos
 /laravel/composer
+/laravel/nbproject/private/
