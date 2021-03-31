@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Modules\Xot\Models\Panels\XotBasePanel;
 
 class ProductPanel extends XotBasePanel {
+
     /**
      * The model the resource corresponds to.
      */
@@ -86,24 +87,23 @@ class ProductPanel extends XotBasePanel {
                 'col_bs_size' => 6,
             ],
             (object) [
-                'type' => 'Text',
+                'type' => 'String',
                 'name' => 'url',
                 'col_bs_size' => 6,
             ],
             (object) [
-                'type' => 'Text',
+                'type' => 'String',
                 'name' => 'title',
-
                 'placeholder' => '',
                 'col_bs_size' => 6,
             ],
             (object) [
-                'type' => 'Text',
+                'type' => 'String',
                 'name' => 'description',
                 'col_bs_size' => 6,
             ],
             (object) [
-                'type' => 'Text',
+                'type' => 'String',
                 'name' => 'img_url',
                 'col_bs_size' => 6,
             ],
@@ -122,13 +122,92 @@ class ProductPanel extends XotBasePanel {
                 'name' => 'purchase_taxable_price',
                 'col_bs_size' => 6,
             ],
-
             (object) [
                 'type' => 'Number',
                 'name' => 'purchase_vat_price',
                 'col_bs_size' => 6,
             ],
-            /*
+            (object) [
+                'type' => 'Number',
+                'name' => 'shipment_price',
+                'col_bs_size' => 6,
+            ],
+            (object) [
+                'type' => 'Number',
+                'name' => 'shipment_vat_percentable',
+                'col_bs_size' => 6,
+            ],
+            (object) [
+                'type' => 'Number',
+                'name' => 'shipment_taxable_price',
+                'col_bs_size' => 6,
+            ],
+            (object) [
+                'type' => 'Number',
+                'name' => 'shipment_vat_price',
+                'col_bs_size' => 6,
+            ],
+            (object) [
+                'type' => 'Number',
+                'name' => 'selling_price',
+                'col_bs_size' => 6,
+            ],
+            (object) [
+                'type' => 'Number',
+                'name' => 'selling_vat_percentable',
+                'col_bs_size' => 6,
+            ],
+            (object) [
+                'type' => 'Number',
+                'name' => 'selling_taxable_price',
+                'col_bs_size' => 6,
+            ],
+            (object) [
+                'type' => 'Number',
+                'name' => 'selling_vat_price',
+                'col_bs_size' => 6,
+            ],
+            (object) [
+                'type' => 'Number',
+                'name' => 'total_sales_commission',
+                'col_bs_size' => 6,
+            ],
+            (object) [
+                'type' => 'Number',
+                'name' => 'total_revenue',
+                'col_bs_size' => 6,
+            ],
+            (object) [
+                'type' => 'Number',
+                'name' => 'vat_tax_autority',
+                'col_bs_size' => 6,
+            ],
+            (object) [
+                'type' => 'Number',
+                'name' => 'personal_income_tax',
+                'col_bs_size' => 6,
+            ],
+            (object) [
+                'type' => 'Number',
+                'name' => 'net_income',
+                'col_bs_size' => 6,
+            ],
+            (object) [
+                'type' => 'Integer',
+                'name' => 'shareholders_number',
+                'col_bs_size' => 6,
+            ],
+            (object) [
+                'type' => 'Number',
+                'name' => 'dividend',
+                'col_bs_size' => 6,
+            ],
+            (object) [
+                'type' => 'Integer',               
+                'name' => 'stock',
+                'col_bs_size' => 6,
+            ],
+                /*
                   $table->string('url')->default('');
                   $table->string('titolo')->default('');
                   $table->string('descrizione')->default('');
@@ -210,4 +289,5 @@ class ProductPanel extends XotBasePanel {
     public function actions() {
         return [];
     }
+
 }

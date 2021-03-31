@@ -54,11 +54,11 @@ class CreateProductsTable extends XotBaseMigration {
             });
 
             //-- UPDATE --
-            $this->getConn()->table($this->getTable(), function (Blueprint $table) {
+            /*$this->getConn()->table($this->getTable(), function (Blueprint $table) {
                 if ($this->hasColumn('product_id')) {
                     $table->renameColumn('product_id', 'id');
                 }
-            });
+            });*/
         }
     }
 }
