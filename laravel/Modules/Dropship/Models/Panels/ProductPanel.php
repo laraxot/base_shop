@@ -75,6 +75,33 @@ class ProductPanel extends XotBasePanel {
         return $query;
     }
 
+    public function customizedFields(String $prefix){
+        return [
+
+            (object) [
+                'type' => 'Number',
+                'name' => $prefix.'_price',
+                'col_bs_size' => 6,
+            ],
+            (object) [
+                'type' => 'Number',
+                'name' =>  $prefix.'_vat_percentable',
+                'col_bs_size' => 6,
+                'except'=>['index'],
+            ],
+            (object) [
+                'type' => 'Number',
+                'name' =>  $prefix.'_taxable_price',
+                'col_bs_size' => 6,
+            ],
+            (object) [
+                'type' => 'Number',
+                'name' =>  $prefix.'_vat_price',
+                'col_bs_size' => 6,
+            ]
+        ];
+    }
+
     /**
      * Get the fields displayed by the resource.
       'value'=>'..',
@@ -85,6 +112,10 @@ class ProductPanel extends XotBasePanel {
                 'type' => 'Id',
                 'name' => 'id',
                 'col_bs_size' => 6,
+            ],(object) [
+                'type' => 'String',
+                'name' => 'published',
+                'col_bs_size' => 6,
             ],
             (object) [
                 'type' => 'String',
@@ -94,7 +125,6 @@ class ProductPanel extends XotBasePanel {
             (object) [
                 'type' => 'String',
                 'name' => 'title',
-                'placeholder' => '',
                 'col_bs_size' => 6,
             ],
             (object) [
@@ -107,66 +137,28 @@ class ProductPanel extends XotBasePanel {
                 'name' => 'img_url',
                 'col_bs_size' => 6,
             ],
-            (object) [
-                'type' => 'Number',
-                'name' => 'purchase_price',
-                'col_bs_size' => 6,
+            (object)[
+                'type'=>'CellPriceVat',
+                'name'=>'purchaseFields',
+                'fields'=>$this->customizedFields('purchase'),
+
             ],
-            (object) [
-                'type' => 'Number',
-                'name' => 'purchase_vat_percentable',
-                'col_bs_size' => 6,
+
+            (object)[
+                'type'=>'CellPriceVat',
+                'name'=>'shipmentFields',
+                'fields'=>$this->customizedFields('shipment'),
+
             ],
-            (object) [
-                'type' => 'Number',
-                'name' => 'purchase_taxable_price',
-                'col_bs_size' => 6,
+
+
+            (object)[
+                'type'=>'CellPriceVat',
+                'name'=>'sellingFields',
+                'fields'=>$this->customizedFields('selling'),
+
             ],
-            (object) [
-                'type' => 'Number',
-                'name' => 'purchase_vat_price',
-                'col_bs_size' => 6,
-            ],
-            (object) [
-                'type' => 'Number',
-                'name' => 'shipment_price',
-                'col_bs_size' => 6,
-            ],
-            (object) [
-                'type' => 'Number',
-                'name' => 'shipment_vat_percentable',
-                'col_bs_size' => 6,
-            ],
-            (object) [
-                'type' => 'Number',
-                'name' => 'shipment_taxable_price',
-                'col_bs_size' => 6,
-            ],
-            (object) [
-                'type' => 'Number',
-                'name' => 'shipment_vat_price',
-                'col_bs_size' => 6,
-            ],
-            (object) [
-                'type' => 'Number',
-                'name' => 'selling_price',
-                'col_bs_size' => 6,
-            ],
-            (object) [
-                'type' => 'Number',
-                'name' => 'selling_vat_percentable',
-                'col_bs_size' => 6,
-            ],
-            (object) [
-                'type' => 'Number',
-                'name' => 'selling_taxable_price',
-                'col_bs_size' => 6,
-            ],
-            (object) [
-                'type' => 'Number',
-                'name' => 'selling_vat_price',
-                'col_bs_size' => 6,
-            ],
+
             (object) [
                 'type' => 'Number',
                 'name' => 'total_sales_commission',
@@ -203,41 +195,10 @@ class ProductPanel extends XotBasePanel {
                 'col_bs_size' => 6,
             ],
             (object) [
-                'type' => 'Integer',               
+                'type' => 'Integer',
                 'name' => 'stock',
                 'col_bs_size' => 6,
             ],
-                /*
-                  $table->string('url')->default('');
-                  $table->string('titolo')->default('');
-                  $table->string('descrizione')->default('');
-                  $table->string('img_url')->default('');
-
-                  $table->decimal('purchase_price', $precision = 16, $scale = 8)->default(0);
-                  $table->decimal('purchase_vat_percentable', $precision = 16, $scale = 8)->default(0);
-                  $table->decimal('purchase_taxable_price', $precision = 16, $scale = 8)->default(0);
-                  $table->decimal('purchase_vat_price', $precision = 16, $scale = 8)->default(0);
-
-                  $table->decimal('shipment_price', $precision = 16, $scale = 8)->default(0);
-                  $table->decimal('shipment_vat_percentable', $precision = 16, $scale = 8)->default(0);
-                  $table->decimal('shipment_taxable_price', $precision = 16, $scale = 8)->default(0);
-                  $table->decimal('shipment_vat_price', $precision = 16, $scale = 8)->default(0);
-
-                  $table->decimal('selling_price', $precision = 16, $scale = 8)->default(0);
-                  $table->decimal('selling_vat_percentable', $precision = 16, $scale = 8)->default(0);
-                  $table->decimal('selling_taxable_price', $precision = 16, $scale = 8)->default(0);
-                  $table->decimal('selling_vat_price', $precision = 16, $scale = 8)->default(0);
-
-                  $table->decimal('total_sales_commission', $precision = 16, $scale = 8)->default(0);
-
-                  $table->decimal('total_revenue', $precision = 16, $scale = 8)->default(0);
-                  $table->decimal('vat_tax_autority', $precision = 16, $scale = 8)->default(0);
-                  $table->decimal('personal_income_tax', $precision = 16, $scale = 8)->default(0);
-                  $table->decimal('net_income', $precision = 16, $scale = 8)->default(0);
-
-                  $table->integer('shareholders_number')->default(2);
-
-                  $table->decimal('dividend', $precision = 16, $scale = 8)->default(0); */
         ];
     }
 
@@ -287,7 +248,10 @@ class ProductPanel extends XotBasePanel {
      * @return array
      */
     public function actions() {
-        return [];
+        return [
+            /*new Actions\ContainerAction(),*/
+            new Actions\ItemAction(),
+        ];
     }
 
 }
