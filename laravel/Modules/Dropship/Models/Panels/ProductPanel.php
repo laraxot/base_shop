@@ -214,17 +214,17 @@ class ProductPanel extends XotBasePanel
     {
         return [
             (object) [
-                'type' => 'String',
+                'type' => 'Boolean',
                 'name' => 'published',
                 'col_bs_size' => 6,
             ],
             (object) [
-                'type' => 'String',
+                'type' => 'Boolean',
                 'name' => 'sold',
                 'col_bs_size' => 6,
             ],
             (object) [
-                'type' => 'String',
+                'type' => 'Boolean',
                 'name' => 'quantity_sold',
                 'col_bs_size' => 6,
             ]
