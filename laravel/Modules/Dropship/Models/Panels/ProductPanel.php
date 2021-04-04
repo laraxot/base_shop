@@ -198,12 +198,12 @@ class ProductPanel extends XotBasePanel
                 'col_bs_size' => 6,
             ],
             (object) [
-                'type' => 'String',
+                'type' => 'Url',
                 'name' => 'url',
                 'col_bs_size' => 6,
             ],
             (object) [
-                'type' => 'String',
+                'type' => 'Image',
                 'name' => 'img_url',
                 'col_bs_size' => 6,
             ]
