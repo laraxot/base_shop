@@ -15,7 +15,8 @@ class SellAction extends XotBasePanelAction
 
     public function handle()
     {
-        $this->row->published = true;
+        $this->row->sold = true;
+        $this->row->quantity_sold += 1;
         $this->row->save();
         return redirect()->back();
     }
