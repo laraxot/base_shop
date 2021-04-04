@@ -6,10 +6,12 @@ use Illuminate\Database\Schema\Blueprint;
 //----- models -----
 use Modules\Xot\Database\Migrations\XotBaseMigration;
 
-class CreateProductsTable extends XotBaseMigration {
-    public function up() {
+class CreateProductsTable extends XotBaseMigration
+{
+    public function up()
+    {
         //-- CREATE --
-        if (! $this->tableExists()) {
+        if (!$this->tableExists()) {
             $this->getConn()->create($this->getTable(), function (Blueprint $table) {
                 $table->increments('id');
                 $table->string('url')->default('');
@@ -45,7 +47,7 @@ class CreateProductsTable extends XotBaseMigration {
 
                 $table->boolean('published')->default(false);
 
-                $table->integer('quantity_sold')->default(2);
+                $table->integer('quantity_sold')->default(0);
                 $table->boolean('sold')->default(false);
 
                 $table->string('created_by')->nullable();
