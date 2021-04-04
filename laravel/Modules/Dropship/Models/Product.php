@@ -5,8 +5,11 @@ namespace Modules\Dropship\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
+use Symfony\Component\DomCrawler\Crawler;
+
 class Product extends BaseModelLang
 {
+
 
     /**
      * @var string[]
@@ -23,7 +26,15 @@ class Product extends BaseModelLang
 
     public function getStockAttribute()
     {
-        //qua va fatto il parsing dell'url
-        return 999;
+        /* $url = $this->url;
+
+        $html = @file_get_contents($url);
+
+        $crawler = new Crawler((string) $html);
+        foreach ($crawler as $domElement) {
+            var_dump($domElement->nodeName);
+        }
+*/
+        return '';
     }
 }
