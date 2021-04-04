@@ -17,7 +17,7 @@ class Product extends BaseModelLang
         'shipment_price', 'shipment_vat_percentable', 'shipment_taxable_price', 'shipment_vat_price',
         'selling_price', 'selling_vat_percentable', 'selling_taxable_price', 'selling_vat_price',
         'total_sales_commission', 'total_revenue', 'vat_tax_autority', 'personal_income_tax', 'net_income',
-        'shareholders_number', 'dividend', 'published', 'sold'
+        'shareholders_number', 'dividend', 'published', 'quantity_sold', 'sold'
     ];
     protected $appends = ['stock'];
 
